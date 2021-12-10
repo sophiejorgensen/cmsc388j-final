@@ -60,8 +60,8 @@ def create_app(test_config=None):
         "MAIL_PASSWORD": "PokeMon167"
     }
 
-    app.config["MONGODB_HOST"] = os.getenv("MONGODB_HOST")
-    print("MONGODB HOST VALUE--------:" + app.config["MONGODB_HOST"])
+    app.config["MONGODB_HOST"] = "mongodb+srv://admin-user:WJ2987ul@cmsc388jfinal.gnjjz.mongodb.net/finalprojdatabase?retryWrites=true&w=majority"
+    print("MONGODB HOST VALUE--------:" + str(app.config["MONGODB_HOST"]))
 
     app.config.update(mail_settings)
 

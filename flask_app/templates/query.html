@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+{% block content %}
+{% if error_msg %}
+    <p>{{ error_msg }}</p>
+{% endif %}
+
+<div class="container">
+    {% for result in results %}
+    <div class="media">
+        <ul>
+            <li><a href="{{ url_for('pokemons.pokemon_info', pokemon_name = result)}}">{{ result }}</a></li>
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

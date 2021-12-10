@@ -1,0 +1,13 @@
+{% extends "header.html" %}
+{% block content %}
+    </br><br>
+    <h2 style="text-align: center;">These pokemon have the ability of {{ ability }}. Click any of these pokemon to review them!</h2>
+    </br><br>
+    {% for poke in poke_w_ability_list %}
+    <ul class="list-unstyled" style="text-align: center;">
+        <li>
+            <a href="{{ url_for('pokemons.pokemon_info', pokemon_name = poke)}}">{{ poke }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+{% endblock %}

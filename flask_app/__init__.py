@@ -34,11 +34,11 @@ def page_not_found(e):
 def create_app(test_config=None):
     app = Flask(__name__)
 
-    #csp = {
-    #    'default-src': '\'self\'',
-    #    'script-src': 'stackpath.bootstrapcdn.com',
-    #    'style-src': ['code.jquery.com', 'cdn.jsdelivr.net', 'stackpath.bootstrapcdn.com']
-    #}
+    csp = {
+        'default-src': '\'self\'',
+        'script-src': 'stackpath.bootstrapcdn.com',
+        'style-src': ['code.jquery.com', 'cdn.jsdelivr.net', 'stackpath.bootstrapcdn.com']
+    }
 
     #Talisman(app, content_security_policy=csp)
 

@@ -38,7 +38,7 @@ def index():
 
         return redirect(request.path)
 
-    reviews = Review.objects(poke_name="General")
+    reviews = Review.objects(poke_name=b"General")
 
     return render_template("index.html", form=form, input_form=input_form, reviews=reviews)
 

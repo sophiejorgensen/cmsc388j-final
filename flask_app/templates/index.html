@@ -22,21 +22,5 @@
         <h2>Please use the search bar to search for pokemons! Then you can review them </h2>
     </div>
 </div>
-<div class="row">
-    <form action="/" class="form-inline my-2 my-lg-0" method="POST">
-        {{ input_form.csrf_token }}
-        {{ input_form.text(class="form-control", placeholder="Leave a general review!") }}
-
-        {% if input_form.text.errors %}
-        <div class="alert alert-warning" role="alert">
-            {% for error in input_form.text.errors %}
-            <span>{{ error }}</span>
-            {% endfor %}
-        </div>
-        {% endif %}
-
-        {{ input_form.submit(class="btn btn-outline-success") }}
-    </form>
-</div>
 
 {% endblock %}

@@ -61,6 +61,7 @@ def create_app(test_config=None):
     }
 
     app.config["MONGODB_HOST"] = os.getenv("MONGODB_HOST")
+    print("MONGODB HOST VALUE--------:" + app.config["MONGODB_HOST"])
 
     app.config.update(mail_settings)
 

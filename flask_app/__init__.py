@@ -46,6 +46,8 @@ def create_app(test_config=None):
     if test_config is not None:
         app.config.update(test_config)
 
+    app.config["MONGODB_HOST"] = "mongodb+srv://admin-user:WJ2987ul@cmsc388jfinal.gnjjz.mongodb.net/finalprojdatabase?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
+
     db.init_app(app)
     login_manager.init_app(app)
     bcrypt.init_app(app)
@@ -60,7 +62,7 @@ def create_app(test_config=None):
         "MAIL_PASSWORD": "PokeMon167"
     }
 
-    app.config["MONGODB_HOST"] = "mongodb+srv://admin-user:WJ2987ul@cmsc388jfinal.gnjjz.mongodb.net/finalprojdatabase?retryWrites=true&w=majority"
+    #app.config["MONGODB_HOST"] = "mongodb+srv://admin-user:WJ2987ul@cmsc388jfinal.gnjjz.mongodb.net/finalprojdatabase?retryWrites=true&w=majority"
     print("MONGODB HOST VALUE--------:" + str(app.config["MONGODB_HOST"]))
 
     app.config.update(mail_settings)

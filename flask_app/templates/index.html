@@ -38,27 +38,5 @@
         {{ input_form.submit(class="btn btn-outline-success") }}
     </form>
 </div>
-{# Reviews #}
-<div class="row">
-    <div class="col-md-12">
-    <h1> Reviews <small class="float-right">{{ reviews|length }} reviews</small></h1>
-    <ul class="media-list">
-        {% for review in reviews %}
-        <li class="media review-item">
-        <div class="media-body">
-            <span class="float-right">
-            <small>{{ review.date }}</small>
-            </span>
-            <a href="{{ url_for('pokemons.user_detail', username=review.commenter.username) }}">
-            <strong>@{{ review.commenter.username }}</strong>
-            </a>
-            <p>
-            {{ review.content }}
-            </p>
-        </div>
-        </li>
-        {% endfor %}
-    </ul>
-    </div>
-</div>
+
 {% endblock %}

@@ -18,29 +18,29 @@ def index():
     if form.validate_on_submit():
         return redirect(url_for("pokemons.query_results", query=form.search_query.data))
 
-    input_form = PokeInputForm()
+    #input_form = PokeInputForm()
 
-    if input_form.validate_on_submit():
-        review = Review(
-            commenter=current_user._get_current_object(),
-            content=input_form.text.data,
-            date=current_time(),
-            poke_name="General",
-        )
-        review.save()
+   #if input_form.validate_on_submit():
+       # review = Review(
+       #     commenter=current_user._get_current_object(),
+       #    content=input_form.text.data,
+        #    date=current_time(),
+        #    poke_name="General",
+        #)
+        #review.save()
 
-        msg = Message("You just submitted a review.",
-              recipients=[current_user.email])
+        #msg = Message("You just submitted a review.",
+        #      recipients=[current_user.email])
 
-        msg.body = "This is your submitted review for Pokemon in general: " + str(input_form.text.data)
+       # msg.body = "This is your submitted review for Pokemon in general: " + str(input_form.text.data)
     
-        mail.send(msg) 
+       # mail.send(msg) 
 
-        return redirect(request.path)
+       # return redirect(request.path)
 
-    reviews = Review.objects(poke_name=b"General")
+    #reviews = Review.objects(poke_name="General")
 
-    return render_template("index.html", form=form, input_form=input_form, reviews=reviews)
+    return render_template("index.html", form=form) #input_form=input_form, reviews=reviews)
 
 # gathers results from search
 @pokemons.route("/search-results/<query>", methods=["GET"])

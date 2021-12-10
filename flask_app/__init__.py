@@ -55,9 +55,9 @@ def create_app(test_config=None):
         "MAIL_PORT": 465,
         "MAIL_USE_TLS": False,
         "MAIL_USE_SSL": True,
-        "MAIL_DEFAULT_SENDER": os.environ['EMAIL_USER'],
-        "MAIL_USERNAME": os.environ['EMAIL_USER'],
-        "MAIL_PASSWORD": os.environ['EMAIL_PASSWORD']
+        "MAIL_DEFAULT_SENDER": "pokemonflaskreviewer@gmail.com",
+        "MAIL_USERNAME": "pokemonflaskreviewer@gmail.com",
+        "MAIL_PASSWORD": "PokeMon167"
     }
 
     app.config["MONGODB_HOST"] = os.getenv("MONGODB_HOST")

@@ -1,5 +1,3 @@
-# export FLASK_APP=__init__.py in command line
-
 # 3rd-party packages
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mail import Mail, Message
@@ -61,9 +59,6 @@ def create_app(test_config=None):
         "MAIL_USERNAME": "pokemonflaskreviewer@gmail.com",
         "MAIL_PASSWORD": "PokeMon167"
     }
-
-    #app.config["MONGODB_HOST"] = "mongodb+srv://admin-user:WJ2987ul@cmsc388jfinal.gnjjz.mongodb.net/finalprojdatabase?retryWrites=true&w=majority"
-    print("MONGODB HOST VALUE--------:" + str(app.config["MONGODB_HOST"]))
 
     app.config.update(mail_settings)
 
